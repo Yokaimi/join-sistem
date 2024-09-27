@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEM Bootcamp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .nav-links a {
+            margin-left: 2rem;
+            position: relative;
+            left: -300px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav-button {
+            background-color: #075EFD;
+            border: 1px solid #075EFD;
+            color: white;
+            padding: 12px 22px 12px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-button:hover {
+            color: #075EFD;
+            background-color: white;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            margin-top: 20px;
+            background-color: #075EFD;
+            color: white;
+            padding: 12px 22px 12px 22px;
+            font-weight: 600;
+            border-radius: 25px;
+            border: 1px solid #075EFD;
+        }
+        .cta-button:hover {
+            color: #075EFD;
+            background-color: white;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 0;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .lbl {
+            margin-left: 20px;
+            width: 50%;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+        .partners {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .partner-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .events {
+            padding: 4rem 0;
+        }
+        .container-nama {
+            display: flex;
+            justify-content: space-between;
+            /* flex: 2; */
+            margin-bottom: 30px;
+        }
+        .nama {
+            flex: 1;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .event-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 110%;
+            
+        }
+        .event-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .event-info {
+            padding: 1rem;
+        }
+        .about-mission {
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+            padding: 100px 70px 60px 70px;
+            /* margin: 4rem 0; */
+        }
+        .about, .mission {
+            flex: 1;
+        }
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .testimonial-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #071F51;
+            color: #fff;
+            padding: 2rem 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 2rem;
+        }
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .p-produk {
+            display: flex;
+            gap: 1rem;
+            color: #6D6E76;
+            
+        }
+        .p-event {
+            color: #6D6E76;
+            
+        }
+        .daftar {
+            color: #075EFD;
+            text-decoration: none;
+        }
+        .lbls {
+            font-weight: 600;
+        }
+        .even {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+                @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                margin: 0.5rem 0;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .hero {
+                flex-direction: column;
+            }
+            .hero-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            .about-mission {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+            }
+            .partner-logos img {
+                max-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="/src/assets/Brand.svg" alt=""></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#blog">Blog</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact us</a>
+                <button class="nav-button">Contact Us</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1>Meningkatkan Karir Anda di SISTEM Bootcamp</h1>
+                <p>Pelajari dari ahli Teknik Perangkat Lunak yang berpengalaman di SEA dan mempersiapkan diri Anda sebagai Software Engineer.</p>
+                <div class="features">
+                    <div class="feature">
+                        <img src="src/assets/icon1.svg" alt="Build Community">
+                        <label class="lbl">Build Community</label>
+                    </div>
+                    <div class="feature">
+                        <img src="src/assets/icon2.svg" alt="Share Events">
+                        <label class="lbl" >Share Events</label>
+                    </div>
+                    <div class="feature">
+                        <img src="src/assets/icon3.svg" alt="Get Information">
+                        <label class="lbl" >Get Information</label>
+                    </div>
+                </div>
+                <button class="cta-button">Contact Us</button>
+            </div>
+            <div class="hero-image">
+                <img src="/src/assets/img1.svg" alt="SISTEM Bootcamp Team">
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <h2>Berbagai Mitra Untuk Mendukung Ekosistem Digital SISTEM</h2>
+                <div class="partner-logos">
+                    <img src="/src/assets/kerja1.png" alt="Transisi">
+                    <img src="/src/assets/kerja2.png" alt="Hacklab">
+                    <img src="/src/assets/kerja3.png" alt="Aditif">
+                    <img src="/src/assets/kerja4.png" alt="Momofin">
+                    <img src="/src/assets/kerja5.png" alt="Mec.co.id">
+                    <img src="/src/assets/kerja6.png" alt="Pacific AI">
+                </div>
+            </div>
+        </section>
+
+        <section class="events container">
+            <div class="even">
+                <h2>Pilih Pengalaman Event Terbaik</h2>
+                <p class="p-produk">Cari berbagai macam event teknologi terbaik yang diadakan oleh komunitas dan di dukung oleh banyak perusahaan besar lainnya</p>
+            </div>
+            <div class="event-grid">
+                <div class="event-card">
+                    <img src="/src/assets/product1.png" alt="Quality Assurance">
+                    <div class="event-info">
+                        <h3>Quality Assurance</h3>
+                        <div class="p-produk">
+                            <p>Live Class</p>
+                            <p>3 Bulan</p>
+                        </div>
+                        <br/>
+                        <p>3000+ Peserta</p>
+                        <a class="daftar" href="#">Daftar sekarang →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="/src/assets/product2.png" alt="Project Manager">
+                    <div class="event-info">
+                        <h3>Project Manager</h3>
+                        <div class="p-produk">
+                            <p>Live Class</p>
+                            <p>3 Bulan</p>
+                        </div>
+                        <br/>
+                        <p>3000+ Peserta</p>
+                        <a class="daftar" href="#">Daftar sekarang →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="/src/assets/product3.png" alt="Development Operations">
+                    <div class="event-info">
+                        <h3>Development Operations</h3>
+                        <div class="p-produk">
+                            <p>Live Class</p>
+                            <p>3 Bulan</p>
+                        </div>
+                        <br/>
+                        <p>3000+ Peserta</p>
+                        <a class="daftar" href="#">Daftar sekarang →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="/src/assets/product4.png" alt="FullStack Developer">
+                    <div class="event-info">
+                        <h3>FullStack Developer</h3>
+                        <div class="p-produk">
+                            <p>Live Class</p>
+                            <p>3 Bulan</p>
+                        </div>
+                        <br/>
+                        <p>3000+ Peserta</p>
+                        <a class="daftar" href="#">Daftar sekarang →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div style="background-color: #075EFD; position: relative; width: 255px; height: 110px; top: 190px;left: 1100px; z-index: -1"></div>
+        <div style="background-color: #FFD050; position: relative; width: 700px; height: 110px; top: 80px;left: 400px; z-index: -1"></div>
+        <section class="about-mission container" style="background-color: #F4F0F8;">
+            <div class="about">
+                <h3 style="letter-spacing: 5px; font-weight: 500;">TENTANG KAMI</h3>
+                <h2 style="font-size: 35px;">Mulai Karir Sukses Anda di Teknik Perangkat Lunak dengan SISTEM BOOTCAMP</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="mission">
+                <h3 style="letter-spacing: 5px; font-weight: 500;">MISI KAMI</h3>
+                <h2 style="font-size: 30px;">Membuat Peradaban Teknologi yang Terbaik untuk seluruh dunia</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <div class="even">
+                    <h2 style="font-size: 30px;">Cerita Sukses Peserta</h2>
+                    <p class="p-event">Cari berbagai macam event teknologi terbaik yang diadakan oleh komunitas dan di dukung oleh banyak perusahaan besar lainnya</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="container-nama">
+                            <img src="/src/assets/org3.png" alt="Syihabudin Ahmad">
+                            <div class="nama">
+                                <label class="lbls">Syihabudin Ahmad</label>
+                                <p>Project Manager Solutionlabs</p>
+                            </div>
+                        </div>
+                        <p>Program Sistem Top Markotop, selama belajar cara penyampaian dan arahan mentor unik selain itu mentor juga siap membantu kami jika ada kesulitan.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="container-nama">
+                            <img src="/src/assets/org2.png" alt="Annastasya KW">
+                            <div class="nama">
+                                <label class="lbls">Annastasya KW</label>
+                                <p>Project Manager Solutionlabs</p>
+                            </div>
+                        </div>
+                        <p>Dulu sebelum belajar tentang PM di SISTEM sering kesuliatan buat manage project, setelah ikut bootcamp sistem jadi tau gimana biar project itu bisa selesai dan achive</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="container-nama">
+                            <img src="/src/assets/org1.png" alt="Tasya WA">
+                            <div class="nama">
+                                <label class="lbls">Tasya WA</label>
+                                <p>Quality Assurance Solutionlabs</p>
+                            </div>
+                        </div>
+                        <p>Kemarin waktu belajar coding disini enak banget, kita di kelas bener-bener dibimbing dari nol (0) sama mentor dan pembelajarannya juga gampang di pahami.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 30px; margin-bottom: 80px; display: flex; justify-content: center; align-items: center; flex-direction: column;text-align: center;" class="cta container">
+            <h2 style="font-size: 40px; width: 70%;">Gabung Jadi Talenta Digital Terbaik Bersama SISTEM</h2>
+            <p style="margin-top: 40px; width: 32%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <button class="cta-button" style="border-radius: 0px; text-align: center;">Daftar Sekarang</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <img src="/src/assets/brand2.png" alt="brand">
+                <p style="color: #ABB0BA;">Jogja Office</p>
+                <p style="color: #ABB0BA;">Jl. Kresna, Gamping Kidul, Ambarketawang, Kec. Gamping, Kabupaten Sleman, DIY 55294</p>
+                <p style="margin-top: 40px; color: #ABB0BA;">Jakarta Office</p>
+                <p style="color: #ABB0BA;">Cibis Nine Building Lantai 11 Jl. TB Simatupang No. 2 Jakarta Selatan</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bootcamp</h3>
+                <a href="#" style="color: #ABB0BA;">Devops</a>
+                <a href="#" style="color: #ABB0BA;">Quality Assurance</a>
+                <a href="#" style="color: #ABB0BA;">Full Stack Developer</a>
+                <a href="#" style="color: #ABB0BA;">Project Manager</a>
+            </div>
+            <div class="footer-section">
+                <h3>SISTEM</h3>
+                <a href="#" style="color: #ABB0BA;">Tentang Kami</a>
+                <a href="#" style="color: #ABB0BA;">Events</a>
+                <a href="#" style="color: #ABB0BA;">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Ikuti Kami</h3>
+                <p style="color: #ABB0BA;">Telp: +62 811-2919-099</p>
+                <p style="color: #ABB0BA;">Email: putri@sistemindonesia.id</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
